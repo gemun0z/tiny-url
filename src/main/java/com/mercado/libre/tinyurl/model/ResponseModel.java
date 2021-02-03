@@ -16,6 +16,9 @@ import java.io.Serializable;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseModel implements Serializable {
 
+    @JsonProperty(value = "hash")
+    private String hash;
+
     @JsonProperty(value = "tiny-url")
     private String tinyUrl;
 

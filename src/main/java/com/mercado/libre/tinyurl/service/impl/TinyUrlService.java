@@ -43,6 +43,7 @@ public class TinyUrlService implements ITinyUrlService {
         repository.save(tinyUrl);
 
         return ResponseModel.builder()
+                .hash(hashId)
                 .tinyUrl(buildTinyUrl(tinyUrl.getId()))
                 .build();
     }

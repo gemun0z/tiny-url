@@ -55,6 +55,7 @@ class TinyUrlControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.hash").exists())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.tiny-url").exists());
     }
 
@@ -149,6 +150,7 @@ class TinyUrlControllerTest {
 
     private ResponseModel generateResponseModelTinyUrl(){
         return ResponseModel.builder()
+                .hash(hash)
                 .tinyUrl("http://localhost:8080/" + hash)
                 .build();
     }

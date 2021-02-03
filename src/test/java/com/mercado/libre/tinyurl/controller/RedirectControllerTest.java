@@ -46,7 +46,7 @@ class RedirectControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
                 .get("/{hash}", hash)).andReturn();
 
-        assertEquals(mvcResult.getResponse().getStatus(), 302);
+        assertEquals(mvcResult.getResponse().getStatus(), 308);
     }
 
     @Test
